@@ -100,9 +100,3 @@ compatibility_flags = ["nodejs_compat"]
 # [[services]]
 # binding = "MY_SERVICE"
 # service = "my-service"
-
-# Bind a Vectorize index. Use to store and query vector embeddings for semantic search, classification and other vector search use-cases.
-# Docs: https://developers.cloudflare.com/workers/wrangler/configuration/#vectorize-indexes
-# [[vectorize]]
-# binding = "MY_INDEX"
-# index_name = "my-index"
