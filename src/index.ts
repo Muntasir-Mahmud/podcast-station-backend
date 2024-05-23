@@ -15,4 +15,10 @@ app.get('/', async (c) => {
 	return c.json(result);
 });
 
+app.post('/', async (c) => {
+	const db = drizzle(c.env.DB);
+	const { title, description } = await c.req.json();
+	const result = await db.insert(podcasts).values({ title, description }).returning();
+	return c.json(result);
+});
 export default app;
