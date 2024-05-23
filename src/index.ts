@@ -1,4 +1,6 @@
+import { drizzle } from 'drizzle-orm/d1';
 import { Hono } from 'hono';
+import { podcasts } from './db/schema';
 
 export type Env = {
 	DB: D1Database;
@@ -7,11 +9,10 @@ export type Env = {
 
 const app = new Hono<{ Bindings: Env }>();
 
-app.get('/', (c) => {
-	return c.json({
-		message: 'Hello World!',
-		env: c.env.MY_VARIABLE,
-	});
+app.get('/', async (c) => {
+	const db = drizzle(c.env.DB);
+	const result = await db.select().from(podcasts).all();
+	return c.json(result);
 });
 
 export default app;
