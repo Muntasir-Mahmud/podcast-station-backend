@@ -14,4 +14,15 @@ upload.get('/', (c) => {
 		</html>
 	);
 });
+
+upload.post('/', async (c) => {
+	const body = await c.req.parseBody();
+	const file = body['filename'];
+	if (file && file instanceof File) {
+		console.log('uploading file to R2');
+		await c.env.Bucket.put(file.name, file);
+		return c.json({ success: true });
+	}
+});
+
 export default upload;

@@ -4,12 +4,15 @@ main = "src/index.ts"
 compatibility_date = "2024-05-12"
 
 [vars]
-MY_VARIABLE = "production_value"
 
 [[d1_databases]]
 binding = "DB" # i.e. available in your Worker on env.DB
 database_name = "podcast-station-d1"
 database_id = "421120a7-7228-43e1-a161-b7b5562db835"
+
+[[r2_buckets]]
+binding = "Bucket"
+bucket_name = "podcast-station-r2"
 
 # Durable Object migrations.
 # Docs: https://developers.cloudflare.com/workers/wrangler/configuration/#migrations
@@ -46,11 +49,7 @@ database_id = "421120a7-7228-43e1-a161-b7b5562db835"
 # [[queues.consumers]]
 # queue = "my-queue"
 
-# Bind an R2 Bucket. Use R2 to store arbitrarily large blobs of data, such as files.
-# Docs: https://developers.cloudflare.com/workers/wrangler/configuration/#r2-buckets
-# [[r2_buckets]]
-# binding = "MY_BUCKET"
-# bucket_name = "my-bucket"
+
 
 # Bind another Worker service. Use this binding to call another Worker without network overhead.
 # Docs: https://developers.cloudflare.com/workers/wrangler/configuration/#service-bindings

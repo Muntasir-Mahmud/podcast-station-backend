@@ -22,6 +22,7 @@
   },
   "dependencies": {
     "@libsql/client": "^0.6.0",
+    "aws4fetch": "^1.0.18",
     "drizzle-orm": "^0.30.10",
     "hono": "^4.3.10"
   }

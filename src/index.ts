@@ -5,7 +5,7 @@ import upload from './upload';
 
 export type Env = {
 	DB: D1Database;
-	MY_VARIABLE: string;
+	Bucket: R2Bucket;
 };
 
 const app = new Hono<{ Bindings: Env }>();
