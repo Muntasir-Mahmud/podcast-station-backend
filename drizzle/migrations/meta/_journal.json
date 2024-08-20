@@ -8,6 +8,34 @@
       "when": 1716485157394,
       "tag": "0000_boring_jamie_braddock",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "6",
+      "when": 1724147141369,
+      "tag": "0001_lively_wildside",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "6",
+      "when": 1724147390408,
+      "tag": "0002_sweet_diamondback",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "6",
+      "when": 1724147808187,
+      "tag": "0003_bumpy_lockheed",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "6",
+      "when": 1724148538539,
+      "tag": "0004_ambiguous_johnny_storm",
+      "breakpoints": true
     }
   ]
 }

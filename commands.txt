@@ -1,0 +1,5 @@
+1. To generate a migration SQL file:
+    bun drizzle-kit generate
+
+2. To migrate to D1
+    bunx wrangler d1 execute podcast-station-d1 --local --file=./drizzle/migrations/0001_lively_wildside.sql

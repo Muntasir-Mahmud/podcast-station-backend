@@ -3,6 +3,8 @@ import { Hono } from 'hono';
 import { podcasts } from './db/schema';
 import upload from './upload';
 
+const R2_URL = 'https://pub-79e26ac7eef44dcba4f58dbbb1f2c91e.r2.dev';
+
 export type Env = {
 	DB: D1Database;
 	Bucket: R2Bucket;
