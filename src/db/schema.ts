@@ -8,6 +8,8 @@ export const podcasts = sqliteTable('podcasts', {
 	description: text('description'),
 	coverImage: text('cover_image'),
 	audioUrl: text('audio_url'),
+	favourite: integer('favourite', { mode: 'boolean' }),
+	category: text('category', { enum: ['New release', 'favorite', 'general'] }),
 	timestamp: text('timestamp')
 		.default(sql`CURRENT_TIMESTAMP`)
 		.notNull(),
