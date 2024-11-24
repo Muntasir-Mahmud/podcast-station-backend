@@ -2,6 +2,7 @@
 name = "podcast-station"
 main = "src/index.ts"
 compatibility_date = "2024-05-12"
+compatibility_flags = ["nodejs_compat"]
 
 [vars]
 
