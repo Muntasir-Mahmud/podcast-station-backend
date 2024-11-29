@@ -1,8 +1,8 @@
 import { Hono } from 'hono';
-import podcast from './routes/podcast';
-import upload from './routes/upload';
-
-const R2_URL = 'https://pub-79e26ac7eef44dcba4f58dbbb1f2c91e.r2.dev';
+import { cors } from 'hono/cors';
+import { logger } from 'hono/logger';
+import auth from './modules/auth/auth.controller';
+import podcast from './modules/podcast/podcast.controller';
 
 export type Env = {
 	DB: D1Database;
@@ -11,7 +11,12 @@ export type Env = {
 
 const app = new Hono<{ Bindings: Env }>();
 
-app.route('/', podcast);
-app.route('/upload', upload);
+// Middleware
+app.use('*', logger());
+app.use('*', cors());
+
+// Routes
+app.route('/auth', auth);
+app.route('/podcasts', podcast);
 
 export default app;
